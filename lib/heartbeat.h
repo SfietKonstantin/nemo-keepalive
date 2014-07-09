@@ -32,7 +32,11 @@
 # include <QTimer>
 
 extern "C" {
+#ifndef HARBOUR_BUILD
 # include <iphbd/libiphb.h>
+#else 
+# include <libiphb.h>
+#endif
 }
 
 class Heartbeat : public QObject
